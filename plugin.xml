@@ -1,0 +1,21 @@
+<plugin id="com.example.fixresizeable" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+
+<name>FixResizeable</name>
+
+
+
+<platform name="android">
+
+<edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application/activity">
+
+<xml>
+
+<activity android:resizeableActivity="false" />
+
+</xml>
+
+</edit-config>
+
+</platform>
+
+</plugin>
