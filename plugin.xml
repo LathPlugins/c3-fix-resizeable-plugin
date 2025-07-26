@@ -1,21 +1,23 @@
-<plugin id="com.example.fixresizeable" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.example.fixresizeable" 
+        version="1.0.1" 
+        xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+        xmlns:android="http://schemas.android.com/apk/res/android">
 
-<name>FixResizeable</name>
+    <name>FixResizeable</name>
+    <description>Forces android:resizeableActivity="false" in the AndroidManifest.xml.</description>
 
+    <js-module src="www/dummy.js" name="dummy">
+        <clobbers target="window.dummy" />
+    </js-module>
 
+    <engines>
+        <engine name="cordova-android" version=">=9.0.0" />
+    </engines>
 
-<platform name="android">
-
-<edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application/activity">
-
-<xml>
-
-<activity android:resizeableActivity="false" />
-
-</xml>
-
-</edit-config>
-
-</platform>
-
+    <platform name="android">
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:name="MainActivity" android:resizeableActivity="false" />
+        </config-file>
+    </platform>
 </plugin>
